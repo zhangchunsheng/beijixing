@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>reader</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="apple-touch-startup-image" href="startup.png">
+		<style type="text/css">
+			body {
+				background: #EAE5CC -webkit-gradient(
+					linear,0 0,100% 0,from(rgba(0, 0, 0, 0.25)),
+					color-stop(2%,rgba(0, 0, 0, 0.13)),
+					color-stop(4%,rgba(0, 0, 0, 0.11)),
+					color-stop(8%,rgba(0, 0, 0, 0.06)),
+					color-stop(15%,transparent)
+				);
+				font-size: 20px;
+				line-height: 29px;
+				margin:20px;
+			}
+			.header {
+				text-align: center;
+				line-height: 1.5em;
+				color: #704F32;
+				font-size: 12px;
+				position: absolute;
+				left: 30px;
+				right: 30px;
+				top: 5px;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
+			}
+			.footer {
+				position: absolute;
+				left: 20px;
+				right: 10px;
+				bottom: -60px;
+				color: #704F32;
+				font-size: 12px;
+				text-align: center;
+			}
+		</style>
+		<script type="text/javascript" src="./js/jquery-1.6.1.min.js"></script>
+		<script type="text/javascript">
+			var currentPage = 1;
+			var perpage = 60 * 2;
+			var allpage = 0;
+			$(document).ready(function() {
+				$.ajax({
+					async: false,
+					url: "http://zreader.sinaapp.com/beijixing/content.php?currentPage=" + currentPage + "&perpage=" + perpage,
+					type: "GET",
+					dataType: "jsonp",
+					jsonp: "callback",
+					timeout: 6000,
+					success: function(json) {
+						$("#content").text(json.contentInfo);
+						allpage = json.pageInfo.allPage;
+					},
+					error: function(xhr) {
+						alert("网络出错了");
+					}
+				});
+				init();
+			});
+			function init() {
+				function onOriChange() {
+					var bodyStyle = document.body.style,
+					availHeight = window.screen.availHeight,
+					orientation = window.orientation;
+					bodyStyle.height = orientation == 0 || orientation == 180 ? "417px" : "269px",
+					setTimeout(scrollTo, 100, 0, 1)
+				}
+				addEventListener("orientationchange", onOriChange, !1),
+				addEventListener("scroll", function() {
+					!pageYOffset && scrollTo(0,1)
+				}, !1),
+				onOriChange()
+			}
+		</script>
+	</head>
+	<body>
+		<div class="header">第一章</div>
+		<div id="content" class="" style="-webkit-box-flex: 1;height: 0px;padding: 32px 0px 0px 25px;"></div>
+		<div class="footer">第1页</div>
+	</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>content</title>
+		<meta charset="utf-8" />
+		<style type="text/css">
+			.border {
+				border: 1px solid black;
+			}
+		</style>
+		<script type="text/javascript" src="./js/jquery-1.6.1.min.js"></script>
+		<script type="text/javascript">
+			var currentPage = 1;
+			var perpage = 60 * 4;
+			var allpage = 0;
+			$(document).ready(function() {
+				$.ajax({
+					async: false,
+					url: "http://zreader.sinaapp.com/beijixing/content.php?currentPage=" + currentPage + "&perpage=" + perpage,
+					type: "GET",
+					dataType: "jsonp",
+					jsonp: "callback",
+					timeout: 6000,
+					success: function(json) {
+						$("#content").text(json.contentInfo);
+						allpage = json.pageInfo.allPage;
+					},
+					error: function(xhr) {
+						alert("网络出错了");
+					}
+				});
+			});
+			function prev() {
+				if(currentPage <= 1)
+					return;
+				currentPage--;
+				$.ajax({
+					async: false,
+					url: "http://zreader.sinaapp.com/beijixing/content.php?currentPage=" + currentPage + "&perpage=" + perpage,
+					type: "GET",
+					dataType: "jsonp",
+					jsonp: "callback",
+					timeout: 6000,
+					success: function(json) {
+						$("#content").text(json.contentInfo);
+						allpage = json.pageInfo.allPage;
+					},
+					error: function(xhr) {
+						alert("网络出错了");
+					}
+				});
+			}
+			function next() {
+				if(currentPage >= allpage)
+					return;
+				currentPage++;
+				$.ajax({
+					async: false,
+					url: "http://zreader.sinaapp.com/beijixing/content.php?currentPage=" + currentPage + "&perpage=" + perpage,
+					type: "GET",
+					dataType: "jsonp",
+					jsonp: "callback",
+					timeout: 6000,
+					success: function(json) {
+						$("#content").text(json.contentInfo);
+						allpage = json.pageInfo.allPage;
+					},
+					error: function(xhr) {
+						alert("网络出错了");
+					}
+				});
+			}
+			//translate(275px, 53px) rotate(-45deg);
+		</script>
+	</head>
+	<body>
+		<div id="content" class="border" style="width:300px;height:400px"></div>
+		<a href="#" onclick="prev()">上一页</a>
+		<a href="#" onclick="next()">下一页</a>
+	</body>
+</html>

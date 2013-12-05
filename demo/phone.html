@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<title>turn.js - The page flip effect for HTML5</title>
+		<meta name="viewport" content="width = 1300">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="keywords" content="page,flip,effect,jquery,html5,magazine,book,newspaper,ipad,iphone,android,ios">
+		<meta name="description" content="turn.js is a plugin for jQuery that adds a beautiful transition similar to real pages in a book or magazine for HTML5.">
+		<link rel="icon" type="image/png" href="pics/favicon.png">
+		<link href="http://fonts.googleapis.com/css?family=Alegreya:700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="../css/styles.css">
+		<script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
+		<script type="text/javascript" src="../libs/jquery.js"></script>
+		<script type="text/javascript" src="../libs/jquery.easing.1.3.js"></script>
+	</head>
+	<body>
+		<div id="controllers" style="left: -300px; ">
+			<div class="pages shadows" id="magazine" style="position: relative; width: 1200px; height: 700px; ">
+				<div class="turn-page-wrapper" style="position: absolute; top: 0px; right: 0px; width: 600px; height: 700px; z-index: 8; " page="1">
+					<div style="position: absolute; top: 0px; left: 0px; overflow-x: hidden; overflow-y: hidden; z-index: auto; -webkit-transform-origin-x: 0%; -webkit-transform-origin-y: 100%; -webkit-transform: translate(403px, -185px) rotate(-84.79211822106065deg); width: 922px; height: 922px; ">
+						<div turn-effect="flipboard" class="turn-page p1" style="width: 600px; height: 700px; position: absolute; left: 0px; top: auto; right: auto; bottom: 0px; -webkit-transform-origin-x: 0%; -webkit-transform-origin-y: 100%; -webkit-transform: rotate(84.79211822106065deg) translate(-403px, -37px); ">
+							<p style="display: block; ">The awesome paper-like effect made for HTML5</p>
+						</div>
+					</div>
+					<div style="top: 0px; left: 0px; overflow-x: hidden; overflow-y: hidden; z-index: 1; display: block; background-image: -webkit-gradient(linear, 100% 100%, 67.93306474936273% 97.49477068354396%, color-stop(0.8, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.199219)), to(rgba(0, 0, 0, 0))); width: 600px; height: 700px; ">
+					</div>
+				</div>
+				
+				<div class="turn-page-wrapper" style="position: absolute; top: 0px; right: 0px; width: 600px; height: 700px; z-index: 6; " page="2">
+					<div style="position: absolute; top: 0px; left: 0px; overflow-x: hidden; overflow-y: hidden; z-index: auto; -webkit-transform-origin-x: 0%; -webkit-transform-origin-y: 100%; width: 922px; height: 922px; ">
+						<div class="turn-page p3" style="width: 600px; height: 700px; left: 0px; top: 0px; right: auto; bottom: auto; -webkit-transform-origin-x: 0%; -webkit-transform-origin-y: 100%; background-image: url(http://www.turnjs.com/pics/texture.jpg); position: absolute; "> 
+							<div class="page-content">
+								test
+							</div>
+						</div>
+					</div>
+					<div style="top: 0px; left: 0px; overflow-x: hidden; overflow-y: hidden; z-index: 1; background-image: -webkit-gradient(linear, 100% 100%, 0% 100%, color-stop(0.8, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0))); display: none; width: 600px; height: 700px; ">
+					</div>
+				</div>
+				
+				<div style="position: absolute; overflow-x: visible; overflow-y: visible; z-index: auto; display: block; top: -85px; left: 268px; ">
+					<div style="position: absolute; overflow-x: hidden; overflow-y: hidden; display: block; -webkit-transform-origin-x: 0%; -webkit-transform-origin-y: 100%; -webkit-transform: translate(403px, -185px) rotate(-84.79211822106065deg); width: 922px; height: 922px; top: 85px; left: 332px; z-index: 16; ">
+						<div style="position: absolute; overflow-x: visible; overflow-y: visible; z-index: auto; left: 0px; top: auto; right: auto; bottom: 0px; -webkit-transform-origin-x: 0%; -webkit-transform-origin-y: 100%; -webkit-transform: rotate(84.79211822106065deg) translate(-188px, 628px); width: 600px; height: 700px; ">
+							<div style="cursor: default; -webkit-transform-origin-x: 0%; -webkit-transform-origin-y: 0%; -webkit-transform: rotate(-79.5842364421213deg); width: 700px; height: 600px; ">
+								<div class="turn-page p2" style="width: 600px; height: 700px; left: 0px; top: 0px; right: auto; bottom: auto; position: absolute; background-image: url(http://www.turnjs.com/pics/texture.jpg); -webkit-transform-origin-x: 0%; -webkit-transform-origin-y: 0%; -webkit-transform: rotate(90deg) translate(0px, -700px); "> 
+								</div>
+								<div style="position: absolute; top: 0px; left: 0px; overflow-x: hidden; overflow-y: hidden; z-index: 1; background-image: -webkit-gradient(linear, 0% 0%, 2.505229316456035% 32.06693525063727%, color-stop(0.482399, rgba(0, 0, 0, 0)), color-stop(0.89648, rgba(0, 0, 0, 0.199219)), to(rgba(255, 255, 255, 0.199219))); width: 700px; height: 600px; ">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div style="position: absolute; overflow-x: hidden; overflow-y: hidden; -webkit-transform-origin-x: 100%; -webkit-transform-origin-y: 100%; -webkit-transform: translate(-322px, -222px) rotate(90deg); display: none; width: 922px; height: 922px; top: 85px; left: -268px; z-index: 7; ">
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

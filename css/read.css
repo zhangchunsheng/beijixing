@@ -1,0 +1,4 @@
+body{margin:0px;padding:0px;background:url("../images/left.jpg")  left  repeat-y,url("../images/right.jpg") right repeat-y #efe6d5 ;border-radius:5px;overflow:hidden;}
+.content{font-size:16px;padding:10px 10px 10px 20px;color:#000;line-height:24px;overflow:hidden;}
+.content h2{color:#91877b;font-size:14px;margin:0px;}
+.content .page{font-size:12px;color:#838280;text-align:center;}
